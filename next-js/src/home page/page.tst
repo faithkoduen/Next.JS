@@ -10,7 +10,7 @@ import Card from "../broswe-categories/categories";
 const Home = () => {
   const flashSales = [
     {
-      imageSrc: "/images/gamingpad.jpeg",
+      imageSrc: "next-js/public/images/blackpad.png",
       title: "HAVIT HV-G92 Gamepad",
       originalPrice: 120,
       discountedPrice: 60,
@@ -30,7 +30,7 @@ const Home = () => {
     },
     
     {
-      imageSrc: "/images/gamingMonitor.webp",
+      imageSrc: "next-js/public/images/redpad.png",
       title: "IPS LCD Gaming Monitor",
       originalPrice: 370,
       discountedPrice: 300, 

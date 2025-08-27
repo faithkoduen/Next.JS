@@ -1,78 +1,80 @@
-import React from "react";
-const Footer = () => (
-  <footer className="bg-black text-white p-8 mt-12">
-    <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
-      {/* Exclusive and Subscribe */}
-      <div>
-        <h3 className="font-bold text-lg mb-2">Exclusive</h3>
-        <span className="block mb-2">Subscribe</span>
-        <span className="block text-sm mb-2">Get 10% off your first order</span>
-        <form className="flex mt-2">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="rounded-l px-2 py-1 text-black"
-          />
-          <button
-            type="submit"
-            className="bg-gray-800 hover:bg-gray-700 px-3 py-1 rounded-r"
-            aria-label="Subscribe"
-          >
-            ➔
-          </button>
-        </form>
-      </div>
-      {/* Support */}
-      <div>
-        <h3 className="font-bold text-lg mb-2">Support</h3>
-        <span className="block text-sm mb-1">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</span>
-        <span className="block text-sm mb-1">exclusive@gmail.com</span>
-        <span className="block text-sm mb-1">+88015-88888-9999</span>
-      </div>
-      {/* Account */}
-      <div>
-        <h3 className="font-bold text-lg mb-2">Account</h3>
-        <ul>
-          <li className="mb-1"><a href="#" className="hover:underline">My Account</a></li>
-          <li className="mb-1"><a href="#" className="hover:underline">Login / Register</a></li>
-          <li className="mb-1"><a href="#" className="hover:underline">Cart</a></li>
-          <li className="mb-1"><a href="#" className="hover:underline">Wishlist</a></li>
-          <li className="mb-1"><a href="#" className="hover:underline">Shop</a></li>
-        </ul>
-      </div>
-      {/* Quick Link */}
-      <div>
-        <h3 className="font-bold text-lg mb-2">Quick Link</h3>
-        <ul>
-          <li className="mb-1"><a href="#" className="hover:underline">Privacy Policy</a></li>
-          <li className="mb-1"><a href="#" className="hover:underline">Terms Of Use</a></li>
-          <li className="mb-1"><a href="#" className="hover:underline">FAQ</a></li>
-          <li className="mb-1"><a href="#" className="hover:underline">Contact</a></li>
-        </ul>
-      </div>
-      {/* Download App */}
-      <div>
-        <h3 className="font-bold text-lg mb-2">Download App</h3>
-        <span className="text-xs mb-2 block">Save $3 with App New User Only</span>
-        <div className="flex space-x-2 mb-3">
-          {/* Replace src with your QR code image or use <img src="..." alt="QR" /> */}
-          <div className="w-12 h-12 bg-white"></div>
-          <div>
-            <img src="/google-play-badge.png" alt="Get it on Google Play" className="mb-1 w-24"/>
-            <img src="/app-store-badge.png" alt="Download on the App Store" className="w-24"/>
-          </div>
+import Link from "next/link"
+import { FaChevronRight } from "react-icons/fa"
+import Image from "next/image"
+import Button from "../button"
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedinIn} from "react-icons/fa6"
+
+const Footer =()=>{
+    return(
+        <div className=" bg-black text-white h-70">
+        <div className="flex justify-around mt-20">
+            <div>
+                <h1 className="font-bold text-xl mb-4">Exclusive</h1>
+                <Link href={"/"}>Subscribe</Link>
+                <p>Get 10% off your first order</p>
+                <input type="text" placeholder="Enter your email"  /><FaChevronRight/>
+
+            </div>
+            <div>
+                <h1 className="font-bold text-xl mb-4">Support</h1>
+                <p>111 Bijoy sarani, Dhaka, <br /> DH 1515, Bangladesh</p>
+                <Link href={"#"}>exclusive@gmail.com</Link>
+                <Link href={"#"}>+88015-88888-9999</Link>
+            </div>
+            <div>
+                <h1 className="font-bold text-xl mb-4">Account</h1>
+                <p>My Account</p>
+                 <p>Login/Register</p>
+                <p>Cart</p>
+                 <p>Wishlist</p>
+                <p>Shop</p>
+                
+            </div>
+             <div>
+                <h1 className="font-bold text-xl mb-4">Quick Link</h1>
+                <p>Privacy Policy</p>
+                 <p>Terms of Use</p>
+                <p>FAQ</p>
+                 <p>Contact</p>
+                
+                    
+            </div>
+            <div>
+                <h1>Download App</h1>
+                <p>Save $3 with App New User Only</p>
+                <div className="flex gap-2">
+           <Image
+                       src="/images/QR.png"
+                       alt="Shopping cart"
+                       width={90}
+                       height={90}
+                       className="rounded-lg object-cover"
+                       priority 
+                     />
+                       <div>
+                     <div className="mb-3">
+                     <Button variant="primary" type="submit" className="w-full py-8 text-lg rounded-lg flex items-center justify-center gap-2">
+              Get it on Play Store
+            </Button>
+            </div>
+          
+            <div>
+            <Button variant="primary" type="submit" className="w-full py-8 text-lg rounded-lg flex items-center justify-center gap-2">
+              Download on  appstore
+            </Button>
+            </div>
+            </div>
+            </div>
+            <div className="flex gap-4 text-2xl mt-2">
+            <FaFacebook/> <FaTwitter/> <FaInstagram/> <FaLinkedinIn/>
+            </div>
+
+            </div>
+            
         </div>
-        <div className="flex space-x-3 text-lg">
-          <a href="#" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
-          <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Linkedin"><i className="fab fa-linkedin"></i></a>
+        <hr className="border-t border-gray-500 max-w-8xl mx-auto p-3 mt-3" />
+        <p className="text-center"> Copyright Rimel 2022. All rights reserved</p>
         </div>
-      </div>
-    </div>
-    <div className="border-t border-gray-700 mt-8 pt-4 flex justify-center">
-      <span className="text-xs">© Copyright Rimel 2022. All right reserved</span>
-    </div>
-  </footer>
-);
-export default Footer;
+    )
+}
+export default Footer

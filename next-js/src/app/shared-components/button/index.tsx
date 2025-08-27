@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
+
 interface ButtonProps {
   children: ReactNode;
   href?: string;
@@ -9,6 +10,7 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset";
   className?: string;
 }
+
 const Button = ({ children, href, onClick, variant = "primary", style, type = "button" }: ButtonProps) => {
   const buttonVariants = () => {
     switch (variant) {
@@ -22,8 +24,11 @@ const Button = ({ children, href, onClick, variant = "primary", style, type = "b
         return "transparent text-black hover:bg-pink-600 border-black-500";
     }
   };
+
   const variantStyles = buttonVariants();
   const baseStyles = "px-5 py-4 rounded-md font-medium transition-colors duration-200";
+
+  
   if (href) {
     return (
       <Link href={href} className={`${baseStyles} ${variantStyles}`} style={style}>
@@ -31,6 +36,7 @@ const Button = ({ children, href, onClick, variant = "primary", style, type = "b
       </Link>
     );
   }
+
   return (
     <button
       className={`${baseStyles} ${variantStyles}`}
@@ -42,4 +48,5 @@ const Button = ({ children, href, onClick, variant = "primary", style, type = "b
     </button>
   );
 };
+
 export default Button;
